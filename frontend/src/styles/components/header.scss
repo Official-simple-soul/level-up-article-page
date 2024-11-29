@@ -1,0 +1,133 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 0;
+  background-color: rgba(black, 0.5);
+  z-index: 100;
+  backdrop-filter: blur(5px);
+
+  @include media($mobile) {
+    padding: 14px 0;
+  }
+}
+
+.container--header {
+  @extend .container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  @include media($mobile) {
+    font-size: 20px;
+  }
+
+  span {
+    color: $primary;
+  }
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+
+  @include media($mobile) {
+    position: fixed;
+    top: 58px;
+    left: 0;
+    right: 0;
+    padding: 30px 20px;
+    border-top: $primary 1px solid;
+    transform: translateX(100%);
+    transition: 300ms;
+    opacity: 0;
+    background-color: black;
+    flex-direction: column;
+  }
+}
+
+.nav__link {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: $serif;
+  transition: 300ms;
+
+  @include media($mobile) {
+    transform: translate(40px);
+    display: inline-block;
+    opacity: 0;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.nav__toggle {
+  position: relative;
+  display: none;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+
+  @include media($mobile) {
+    display: block;
+  }
+}
+
+.nav__open,
+.nav__close {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 300ms;
+}
+
+.nav__open {
+  transform: translate(-50%, -50%);
+}
+
+.nav__close {
+  transform: translate(150%, -50%);
+}
+
+.nav--active {
+
+  .nav__list,
+  .nav__link {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .nav__link {
+    @include media($mobile) {
+      transition-delay: 300ms;
+    }
+  }
+
+  .nav__open {
+    transform: translate(-150%, -50%);
+  }
+
+  .nav__close {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.nav__link--active {
+  color: #2cbcff;
+}

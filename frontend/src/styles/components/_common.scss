@@ -1,0 +1,31 @@
+.mantine-InputWrapper-root {
+  width: 100%;
+
+  input,
+  textarea,
+  button {
+    padding: 0.75rem;
+    background: #FFFFFF;
+    border: 1px solid #175470;
+    border-radius: 5px;
+    color: #000000;
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+  }
+}
+
+.mantine-Avatar-root {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+}
+
+.mantine-CloseButton-root {
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+  color: #2CBCFF !important;
+}

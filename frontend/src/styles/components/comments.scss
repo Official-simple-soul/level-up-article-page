@@ -1,0 +1,149 @@
+.comments {
+  margin-top: 2rem;
+  background-color: #000000;
+  padding: 27px 0 74px;
+
+  &__container {
+    max-width: 891px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: 31px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: left;
+    color: #2CBCFF;
+  }
+
+  &__loading {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  &__form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 16px;
+    background: #001722;
+    border-radius: 10px;
+    padding: 30px 25px;
+    border: 2px solid #175470;
+    position: relative;
+
+    &-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+
+    &-input-wrapper {
+      flex: 1;
+    }
+
+    &-input,
+    .mantine-Textarea-input {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: var(--color-background-secondary);
+      border: 1px solid var(--color-border);
+      resize: none;
+      background: #000000;
+      border-radius: 21px;
+      height: 100%;
+      max-height: 45px;
+      overflow: hidden;
+      padding-right: 40px;
+      color: white;
+
+      &:focus {
+        outline: none;
+        border-color: var(--color-primary);
+      }
+    }
+
+    &-submit {
+      background: #2CBCFF;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+      color: #000000;
+      padding: 2px 18px;
+      height: fit-content;
+      border-radius: 21px;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      right: 35px;
+      top: 36%;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      &:hover:not(:disabled) {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.comment {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 16px;
+  background: #001722;
+  border-radius: 10px;
+  padding: 30px 25px;
+  border: 2px solid #175470;
+  position: relative;
+
+  &__avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-direction: column;
+  }
+
+  &__author {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+    color: #2CBCFF;
+  }
+
+  &__date {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: left;
+    color: #989898;
+  }
+
+  &__text {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: left;
+  }
+}
+
+.mantine-Textarea-input {
+  margin-top: -12px;
+  position: relative;
+}

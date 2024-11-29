@@ -1,0 +1,68 @@
+.listTabs {
+  display: flex;
+  padding: 4px;
+  border-radius: 40px;
+  border: 1px solid $primary;
+  gap: 4px;
+  background-color: $darkSecondary;
+}
+
+.articlesList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-top: 6px;
+  margin-top: 44px;
+
+  @include media($mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.button--createArticle {
+  @extend .button;
+  align-self: flex-start;
+}
+
+.pagination {
+  margin-top: 50px;
+}
+
+.pagination__list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination__item {
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  align-items: center;
+  cursor: pointer;
+  transition: 300ms;
+
+  span {
+    transform: translateY(-1px);
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.pagination__item--active {
+  @extend .pagination__item;
+  background-color: $primary;
+  pointer-events: none
+}

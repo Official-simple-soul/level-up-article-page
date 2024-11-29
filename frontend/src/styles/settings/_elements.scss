@@ -1,0 +1,87 @@
+body {
+  font-family: $sans;
+  background-color: $dark;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $serif;
+}
+
+main {
+  margin-top: 68px;
+
+  @include media($mobile) {
+    margin-top: 58px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1060px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: auto;
+
+  @include media($mobile) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.divider {
+  width: 180px;
+  height: 1px;
+  background-color: $primary;
+}
+
+.divider--latestNews {
+  @extend .divider;
+  width: 120px;
+}
+
+.premiumFlag {
+  background-color: white;
+  width: 26px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.premiumFlag--featuredCard {
+  @extend .premiumFlag;
+  z-index: 3;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.premiumFlag--articleCard {
+  @extend .premiumFlag;
+  z-index: 5;
+  position: absolute;
+  top: 16px;
+  left: 20px;
+}

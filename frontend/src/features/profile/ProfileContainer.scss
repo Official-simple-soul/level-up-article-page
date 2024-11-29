@@ -1,0 +1,134 @@
+@import 'src/styles/index';
+
+.profileHero {
+  background-image: url('/src/assets/images/hero_bg.png');
+  background-size: cover;
+  padding: 60px 0;
+
+  @include media($mobile) {
+    padding: 36px 0;
+  }
+}
+
+.container--profileHero {
+  @extend .container;
+  display: flex;
+  justify-content: space-between;
+
+  @include media($mobile) {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.profileHero__left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  @include media($mobile) {
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 48px;
+
+    @include media($mobile) {
+      font-size: 30px;
+    }
+  }
+
+  span {
+    color: $primary;
+  }
+
+  a {
+    color: $primary;
+    font-weight: bold;
+    margin-top: 8px;
+    display: inline-block;
+    transition: 300ms;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.profileHeroImage {
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  border: 1px solid white;
+  position: relative;
+  flex-shrink: 0;
+  transition: 300ms;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include media($mobile) {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.profileHeroImage__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profileHeroImage__changeImage {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  cursor: pointer;
+}
+
+.profileContent {
+  margin: 60px 0 40px;
+
+  @include media($mobile) {
+    margin: 36px 0 20px;
+  }
+}
+
+.container--profileContent {
+  @extend .container;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: center;
+
+  button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background: var(--color-background-light);
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+      background: var(--color-background-lighter);
+    }
+  }
+}
