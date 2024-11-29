@@ -1,0 +1,9 @@
+{
+    "editor.formatOnSave": true,
+    "eslint.workingDirectories": [
+        { "directory": "./frontend", "changeProcessCWD": true }
+    ],
+    "prettier.requireConfig": true,
+    "editor.tabSize": 2, // FE needs 2. This doesn't affect BE files like php, where tab size is 4
+    "typescript.preferences.includePackageJsonAutoImports": "on"
+}

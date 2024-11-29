@@ -1,0 +1,21 @@
+@import 'src/styles/settings/reset';
+@import 'src/styles/settings/mixins';
+@import 'src/styles/settings/fonts';
+@import 'src/styles/settings/variables';
+@import 'src/styles/settings/elements';
+
+// components
+@import 'src/styles/components/header';
+@import 'src/styles/components/footer';
+@import 'src/styles/components/featuredCard';
+@import 'src/styles/components/cardContent';
+@import 'src/styles/components/tag';
+@import 'src/styles/components/buttons';
+@import 'src/styles/components/premiumBanner';
+@import 'src/styles/components/articlesList';
+@import 'src/styles/components/articleCard';
+@import 'src/styles/components/modals';
+@import 'src/styles/components/home';
+@import 'src/styles/components/article';
+@import 'src/styles/components/comments';
+@import 'src/styles/components/common';

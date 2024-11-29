@@ -1,0 +1,59 @@
+.articleCard {
+  display: flex;
+  background-color: black;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+
+  .edit_article {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    overflow: visible;
+    cursor: pointer;
+    opacity: 0;
+    transition: 300ms;
+  }
+
+  &:hover {
+    .articleCard__imgBox img {
+      transform: scale(1);
+    }
+
+    .cardContent__title {
+      color: $primary;
+    }
+
+    .edit_article {
+      opacity: 1;
+    }
+  }
+
+  @include media($mobileSmall) {
+    display: block;
+  }
+}
+
+.articleCard__imgBox {
+  flex: 1.2;
+  position: relative;
+  overflow: hidden;
+
+  @include media($mobileSmall) {
+    min-height: 160px;
+  }
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.07);
+    transition: 500ms;
+  }
+}
+
+.articleCard__body {
+  padding: 20px;
+  flex: 2;
+}

@@ -1,0 +1,224 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin: 0 auto;
+}
+
+.form--simple {
+  @extend .form;
+  max-width: 420px;
+}
+
+.form__buttonBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label,
+  input,
+  p,
+  textarea {
+    display: block;
+    font-family: $sans;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 300ms;
+  }
+
+  label {
+    color: white;
+  }
+
+  input,
+  textarea {
+    padding: 14px;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    border: 2px solid transparent;
+    transition: 300ms;
+    outline: none;
+    box-sizing: border-box;
+
+    @include media($mobile) {
+      padding: 10px;
+    }
+
+    &:focus {
+      border: 2px solid $primary;
+    }
+  }
+
+  textarea {
+    height: 200px;
+  }
+
+  p {
+    display: none;
+    color: $danger;
+  }
+
+  &:focus-within {
+    label {
+      color: $primary;
+    }
+  }
+}
+
+.checkBox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  label {
+    font-family: $sans;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    color: white;
+    font-weight: bold;
+    transition: 300ms;
+  }
+
+  input {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.inputBox--error {
+  input {
+    border: 1px solid $danger;
+  }
+
+  p {
+    display: block;
+  }
+}
+
+.formTabs {
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.formTabs__tab {
+  padding: 12px;
+  text-align: center;
+  flex: 1;
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+  transition: 300ms;
+  background-color: white;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.formTabs__tab--active {
+  @extend .formTabs__tab;
+  background-color: $primary;
+  pointer-events: none;
+}
+
+.formPriceInfo {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  span {
+    color: $primary;
+  }
+}
+
+.form--article {
+  @extend .form;
+  width: 100%;
+}
+
+.form__inner {
+  display: flex;
+  gap: 50px;
+
+  @include media($tablet) {
+    gap: 16px;
+  }
+
+  @include media($mobile) {
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  fieldset {
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+}
+
+.searchArticlesForm {
+  display: flex;
+  padding: 4px 4px 4px 12px;
+  border-radius: 40px;
+  border: 1px solid $primary;
+  gap: 4px;
+  margin-right: 6px;
+
+  @include media($tablet) {
+    margin-right: 0;
+  }
+
+  input {
+    font-family: $sans;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+  }
+
+  input,
+  button {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    transition: 300ms;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &:hover {
+      background-color: darken($primary, 10%);
+    }
+  }
+}

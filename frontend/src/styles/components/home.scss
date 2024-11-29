@@ -1,0 +1,138 @@
+.hero {
+  background-image: url('/src/assets/images/hero_bg.png');
+  background-size: cover;
+}
+
+.container--hero {
+  @extend .container;
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 24px;
+
+  @include media($mobile) {
+    gap: 12px;
+    min-height: 260px;
+  }
+
+  h1,
+  p {
+    max-width: 620px;
+  }
+
+  h1 {
+    max-width: 600px;
+    font-size: 48px;
+
+    @include media($mobile) {
+      font-size: 30px;
+    }
+
+    span {
+      color: $primary;
+    }
+  }
+
+  p {
+    font-size: 20px;
+
+    @include media($mobile) {
+      font-size: 16px;
+    }
+  }
+}
+
+.featuredNews {
+  padding: 26px 0 60px;
+  border-bottom: 1px solid $darkBorder;
+}
+
+.container--featuredNews {
+  @extend .container;
+}
+
+.featuredNews__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    font-size: 36px;
+
+    @include media($mobile) {
+      font-size: 28px;
+    }
+  }
+
+  a {
+    font-weight: bold;
+    color: $primary;
+    transition: 300ms;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.featuredCardsList {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+
+  .featuredCard:first-child {
+    grid-row: span 2 / span 2;
+  }
+
+  .featuredCard:last-child {
+    grid-column-start: 2;
+  }
+
+  @include media($mobile) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.latestNews {
+  margin: 40px 0 60px;
+}
+
+.container--latestNews {
+  @extend .container;
+}
+
+.latestNews__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.latestNews__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  h3 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  p {
+    max-width: 400px;
+    font-family: $sans;
+    text-align: center;
+  }
+}
+
+.latestNews__link {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
